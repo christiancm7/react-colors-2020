@@ -1,6 +1,5 @@
 .Palette {
   height: 100vh;
-  /* make no scroll in viewport */
   display: flex;
   flex-direction: column;
 }
