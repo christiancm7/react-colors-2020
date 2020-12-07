@@ -7,7 +7,7 @@ export const styles = {
         justifyContent: "center"
     },
     container: {
-        width: "80%",
+        width: "75%",
         display: "flex",
         alignItems: "flex-start",
         flexDirection: "column",
