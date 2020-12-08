@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Pallete from './Palette'
+import Palette from './Palette'
 import PaletteList from './PaletteList'
 import SingleColorPalette from './SingleColorPalette'
 import NewPaletteForm from './NewPalletForm'
@@ -24,46 +24,46 @@ class App extends Component {
   render() {
     return (
       <Switch>
-        <Route 
-          exact 
-          path="/palette/new"
-          render={(routeProps) => 
-            <NewPaletteForm 
-              savePalette={this.savePalette} 
+        <Route
+          exact
+          path='/palette/new'
+          render={routeProps => (
+            <NewPaletteForm
+              savePalette={this.savePalette}
               palettes={this.state.palettes}
-              {...routeProps} 
+              {...routeProps}
             />
-            } 
+          )}
         />
-        <Route 
-          exact 
-          path="/palette/:paletteId/:colorId" 
-          render={(routeProps) => (
+        <Route
+          exact
+          path='/palette/:paletteId/:colorId'
+          render={routeProps => (
             <SingleColorPalette
-              colorId={routeProps.match.params.colorId} 
+              colorId={routeProps.match.params.colorId}
               palette={generatePalette(
-              this.findPalette(routeProps.match.params.paletteId)
-            )}
-          />
-        )}
-          />
-        )} 
+                this.findPalette(routeProps.match.params.paletteId)
+              )}
+            />
+          )}
         />
-        <Route  
-          exact 
-          path="/" 
-          render={(routeProps) => <PaletteList palettes={this.state.palettes} {...routeProps} />}
+        <Route
+          exact
+          path='/'
+          render={routeProps => (
+            <PaletteList palettes={this.state.palettes} {...routeProps} />
+          )}
         />
-        <Route  
-          exact 
-          path="/palette/:id" 
-          render={(routeProps) => (
-            <Pallete 
+        <Route
+          exact
+          path='/palette/:id'
+          render={routeProps => (
+            <Palette
               palette={generatePalette(
-              this.findPalette(routeProps.match.params.id)
-            )}
-          />
-        )} 
+                this.findPalette(routeProps.match.params.id)
+              )}
+            />
+          )}
         />
       </Switch>
     )
