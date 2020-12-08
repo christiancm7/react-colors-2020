@@ -5,9 +5,6 @@ export const styles = theme => ({
   root: {
     display: "flex"
   },
-  hide: {
-    display: "none"
-  },
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
@@ -22,13 +19,13 @@ export const styles = theme => ({
     display: "flex",
     alignItems: "center",
     padding: "0 8px",
+    width:  "100%",
     ...theme.mixins.toolbar,
     justifyContent: "flex-end"
   },
   content: {
     flexGrow: 1,
     height: "calc(100vh - 64px)",
-    padding: theme.spacing.unit * 3,
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
